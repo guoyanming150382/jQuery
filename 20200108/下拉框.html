@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+	<style>
+		*{padding: 0;margin: 0;list-style: none;}
+		ul{
+			width: 600px;
+			margin: 30px auto;
+			display: flex;
+			justify-content: space-around;
+			text-align: center;
+		}
+		ul li dl{
+			text-align: center;
+			padding: 5px;
+			cursor: pointer;
+		}
+		.on{
+			background: url(1.jpg) no-repeat center top;
+			background-size: 90% 5px;
+		}
+		div{
+			height: 0;
+			overflow: hidden;
+		}
+		.uyt{
+			position: fixed;
+			right: 50px;
+			bottom: 50px;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background: red;
+			color: #fff;
+			cursor: pointer;
+			display: none;
+		}
+	</style>
+</head>
+<body style="height: 1500px">
+	<div class="uyt">置顶</div>
+	<ul>
+		<li class="on">
+			<dl >新闻中心</dl>
+			<div>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+			</div>
+		</li>
+		<li >
+			<dl>新闻中心</dl>
+			<div>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+			</div>
+		</li>
+		<li >
+			<dl>新闻中心</dl>
+			<div>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+			</div>
+		</li>
+		<li >
+			<dl>新闻中心</dl>
+			<div>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+			</div>
+		</li>
+		<li >
+			<dl>新闻中心</dl>
+			<div>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+			</div>
+		</li>
+		<li >
+			<dl>新闻中心</dl>
+			<div>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+				<dd>两伊战争</dd>
+			</div>
+		</li>
+	</ul>
+	<script type="text/javascript">
+		$('ul li').mouseover(function() {
+			$(this).addClass('on').siblings().removeClass('on')
+			$(this).find('div').animate({height:'100%'})
+		});
+		$('ul li').mouseout(function() {
+			$(this).find('div').animate({height:'0'})
+		});
+		// 回到顶部
+		$(window).scroll(function(){
+			var ding=$('html,body').scrollTop()
+			if(ding>300){
+				$('.uyt').show()
+			}else{
+				$('.uyt').hide()
+			}
+		})
+		$('.uyt').click(function() {
+			$('body,html').animate({scrollTop:0}, 200)
+		});
+	</script>
+</body>
+</html>
