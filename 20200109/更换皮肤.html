@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+	<style type="text/css">
+		*{padding: 0;margin: 0;
+			list-style: none;
+		}
+		.all{
+			width: 640px;
+			display: flex;
+			border: 1px solid #000;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 5px;
+			margin: 20px auto;
+		}
+		.all li{
+			width: 200px;
+			height: 120px;
+			border: 1px solid #000;
+			margin: 5px;
+		}
+		.all li img{
+			width: 100%;height: 100%;
+		}
+		body{
+			background-size:  
+		}
+		.menu{
+			width: 200px;
+			background: #eee;
+			border: 1px solid #000;
+		}
+		.menu li{
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			padding-left: 40px;
+			box-sizing: border-box;
+			font-weight: 800;
+			color: #333;
+		}
+		.menu li:hover{
+			background-color: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<ul class="all">
+		<li>
+			<img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt="">
+		</li>
+		<li>
+			<img src="http://img4.imgtn.bdimg.com/it/u=2539922263,2810970709&fm=200&gp=0.jpg" alt="">
+		</li>
+		<li>
+			<img src="http://img4.imgtn.bdimg.com/it/u=1878067600,3935137756&fm=200&gp=0.jpg" alt="">
+		</li>
+		<li>
+			<img src="http://img2.imgtn.bdimg.com/it/u=3844233833,3942617167&fm=200&gp=0.jpg" alt="">
+		</li>
+		<li>
+			<img src="http://img3.imgtn.bdimg.com/it/u=346230831,1833217134&fm=200&gp=0.jpg" alt="">
+		</li>
+		<li>
+			<img src="http://img5.imgtn.bdimg.com/it/u=2298824648,1812234339&fm=200&gp=0.jpg" alt="">
+		</li>
+	</ul>
+	<ul class="menu">
+		<li>添加应用</li>
+		<li>获取课程</li>
+		<li>刷新</li>
+		<li>上传资料</li>
+		<li>更换背景</li>
+		<li>注销</li>
+	</ul>
+	<script type="text/javascript">
+		var ol=document.getElementsByTagName('li')
+		var icon=['shua.png']
+		for(var i=0;i<ol.length;i++){
+			var first=$(ol[0]).find('img').attr('src');
+			$('body').css({'background':'url('+first+') no-repeat','backgroundSize':'cover'})
+			$(ol[i]).click(function() {
+				var oimg=$(this).find('img').attr('src')
+				$('body').css({'background':'url('+oimg+') no-repeat','backgroundSize':'cover'})
+			});
+		}
+
+		document.oncontextmenu = function(e){
+               e.preventDefault();
+               console.log(111)
+           };
+	</script>
+</body>
+</html>

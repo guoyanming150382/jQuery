@@ -104,14 +104,14 @@
 		// 回到顶部
 		$(window).scroll(function(){
 			var ding=$('html,body').scrollTop()
-			if(ding>300){
+			if(ding>200){
 				$('.uyt').show()
 			}else{
 				$('.uyt').hide()
 			}
 		})
 		$('.uyt').click(function() {
-			$('body,html').animate({scrollTop:0}, 200)
+			$('body,html').animate({scrollTop:0}, 500)
 		});
 	</script>
 </body>

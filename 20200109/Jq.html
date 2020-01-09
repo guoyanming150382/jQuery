@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../wps/jquery-3.2.0.min.js"></script>
+	<style type="text/css">
+		.t1{
+			width: 50px;height: 50px;background: blue
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p class="p1">1马达加斯及</p>
+		<p class="p2">2马达加斯及</p>
+		<p>3马达加斯及</p>
+		<p>4马达加斯及</p>
+		<p>5马达加斯及</p>
+		<p>6马达加斯及</p>
+	</div>
+	<ul>
+		<li>1马达加斯及</li>
+		<li>2马达加斯及</li>
+		<li>3马达加斯及</li>
+		<li>4马达加斯及</li>
+		<li>5马达加斯及</li>
+		<li>6马达加斯及</li>
+	</ul>
+	<h1>马达加斯加</h1>
+	<h2>马达加斯加</h2>
+	<h3>马达加斯加</h3>
+	<h4>马达加斯加</h4>
+	<h5>马达加斯加</h5>
+	<h6>马达加斯加</h6>
+
+	<div class="t1">奥巴马</div>
+	<ul style="width: 100px;height: 100px;">.com</ul>
+	焦点:<input type="text">
+	焦点:<input type="text">
+	焦点:<input type="text">
+	<script type="text/javascript">
+		// 基本过滤
+		$('div p:first').css({'background':'red'})
+		$('div p:last').css({'background':'green'})
+		$('div p:not(.p1)').css({'color':'pink'})
+		$('div p:even').css({'fontSize':'25px'})
+		$('div p:odd').css({'fontSize':'10px'})
+		$('div p:eq(2)').css({'fontFamily':"宋体"})
+		$('ul li:gt(3)').css({'background':"blue"})//从大于4的开始查找不包括本身
+		$('ul li:lt(3)').css({'background':"pink"})//从小于4的开始查找不包括本身
+
+		// 选择标题元素
+		$(':header').css({'background':'red'})
+
+			$('.t1').animate({width:'100px',height:'100px',background:'pink'}, 1000)
+			$(':animated').css({'background':'red'})
+
+		// 选择被焦点的元素
+		$('input').get(0).focus();
+		$('input:focus').css({'background':'red'})
+
+		// 内容过滤
+		$('ul:contains(".com")').css({'background':'pink'})
+	</script>
+</body>
+</html>
