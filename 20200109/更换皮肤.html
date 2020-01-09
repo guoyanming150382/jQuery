@@ -49,7 +49,7 @@
 	</style>
 </head>
 <body>
-	<ul class="all">
+	<ul class="all" id="aio">
 		<li>
 			<img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt="">
 		</li>
@@ -69,7 +69,7 @@
 			<img src="http://img5.imgtn.bdimg.com/it/u=2298824648,1812234339&fm=200&gp=0.jpg" alt="">
 		</li>
 	</ul>
-	<ul class="menu">
+	<ul class="menu" id="mei">
 		<li>添加应用</li>
 		<li>获取课程</li>
 		<li>刷新</li>
@@ -78,20 +78,29 @@
 		<li>注销</li>
 	</ul>
 	<script type="text/javascript">
-		var ol=document.getElementsByTagName('li')
-		var icon=['shua.png']
+		var ou=document.getElementById('aio')
+		var ol=ou.getElementsByTagName('li')
+
+		var op=document.getElementById('mei')
+		var ole=op.getElementsByTagName('li')
 		for(var i=0;i<ol.length;i++){
 			var first=$(ol[0]).find('img').attr('src');
 			$('body').css({'background':'url('+first+') no-repeat','backgroundSize':'cover'})
+
 			$(ol[i]).click(function() {
 				var oimg=$(this).find('img').attr('src')
 				$('body').css({'background':'url('+oimg+') no-repeat','backgroundSize':'cover'})
 			});
 		}
-
+		
+		 $('.menu').hide()
 		document.oncontextmenu = function(e){
                e.preventDefault();
-               console.log(111)
+               let x = e.clientX;
+				let y = e.clientY
+				console.log(x,y)
+               $('.menu').css({'position':'fixed','top':''+x+'px','left':''+y+'px'})
+               $('.menu').slideToggle()
            };
 	</script>
 </body>
