@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+	<script src="../wps/jquery-3.2.0.min.js"></script>
 	<style type="text/css">
 		*{padding: 0;margin: 0;
 			list-style: none;
@@ -42,13 +42,77 @@
 			box-sizing: border-box;
 			font-weight: 800;
 			color: #333;
+			cursor: pointer;
 		}
 		.menu li:hover{
 			background-color: skyblue;
+			color: #fff;
+		}
+		.leitop{
+			width:220px;background:#fff;
+			border: 2px solid #ddd;
+			font-weight: 800;
+		}
+		.leitop li{
+			padding-left:10px;
+			padding-right: 10px;
+			box-sizing:border-box;
+			/*background: url(img/up.png) no-repeat 190px center;
+			background-size: 20px 20px;*/
+		}
+		.leitop li .menulist:hover{
+			background: skyblue;
+			color:#fff;
+		}
+		.on{background: skyblue;
+			color:#fff;}
+
+		.leitop li .menulist{
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			border-bottom: 1px solid #aaa;
+		}
+		.leitop li .menulist img{
+			width: 20px;height: 20px;
+			transform: translateY(3px);
+			transform: translateX(180px);
+		}
+		.leitop li:last-child .menulist{
+			border: none;
+		}
+		.leitop li dl dd{
+			width: 100%;height: 30px;
+			line-height: 30px;
+			border-bottom: 1px solid #ddd;
+		} 
+		.leitop li dl dd:hover{
+			background: skyblue;
+			color:#fff;
+		}
+		.selectPicture{
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			border-radius: 5px;
+			background-color: red;
+			position: fixed;
+			top: 20px;right: 20px;
+			border:2px solid #aaa;
+			cursor: pointer; 
+		}
+		.leitop{
+			position: fixed;
+			right: 20px;
+			top: 360px;
 		}
 	</style>
 </head>
 <body>
+	<div class="selectPicture">
+		选择皮肤
+	</div>
 	<ul class="all" id="aio">
 		<li>
 			<img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt="">
@@ -77,12 +141,18 @@
 		<li>更换背景</li>
 		<li>注销</li>
 	</ul>
+
 	<script type="text/javascript">
 		var ou=document.getElementById('aio')
 		var ol=ou.getElementsByTagName('li')
 
 		var op=document.getElementById('mei')
 		var ole=op.getElementsByTagName('li')
+
+		$('#aio').hide()
+		$('.selectPicture').click(function() {
+			$('#aio').slideToggle()
+		});
 		for(var i=0;i<ol.length;i++){
 			var first=$(ol[0]).find('img').attr('src');
 			$('body').css({'background':'url('+first+') no-repeat','backgroundSize':'cover'})
@@ -96,12 +166,34 @@
 		 $('.menu').hide()
 		document.oncontextmenu = function(e){
                e.preventDefault();
-               let x = e.clientX;
-				let y = e.clientY
+               var  x = e.clientX;
+				var  y = e.clientY
 				console.log(x,y)
-               $('.menu').css({'position':'fixed','top':''+x+'px','left':''+y+'px'})
-               $('.menu').slideToggle()
+               $('.menu').css({'position':'fixed','top':''+y+'px','left':''+x+'px'})
+               $('.menu').show()
            };
+        document.onclick=function(){
+        	$('.menu').hide() 
+        }
+
+        // 类别
+        var leitop=$('<ul class="leitop"></ul>')
+        $('body').append(leitop)
+        var arr=['类别','全部','奥宝马','小布什','拿破仑']
+        
+        for(var i=0;i<arr.length;i++){
+        	$(leitop).append('<li><div class="menulist"><img src="img/up.png"></img>'+arr[i]+'</div><dl><dd>1</dd><dd>2</dd><dd>3</dd><dd>5</dd></dl></li>')
+        }
+        $('.leitop li dl').hide();
+        for(var i=0;i<$('.leitop li').length;i++){
+        	console.log($('.leitop li').length)
+        	$('.leitop li:eq('+i+')').click(function() {
+        		$(this).find('.menulist').addClass('on').parent('li').siblings().find('.menulist').removeClass('on')
+        		
+        		$(this).find('dl').slideDown().parent('li').siblings().find('dl').slideUp();
+        		
+        	});
+        }
 	</script>
 </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>061-图片轮播图.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 3950px;
+			height: 200px;
+			animation:change 10s linear 0s infinite normal;
+		}
+		@keyframes change{
+			from{
+				margin-left: 0px;
+			}
+			to{
+				margin-left: -3160px;
+			}	
+		}
+		ul:hover{
+			animation-play-state: paused;
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+		ul li:hover{
+			opacity: 1;
+		}
+		ul li{
+			width: 395px;
+			height: 200px;
+			float: left;
+			list-style: none;
+		}
+		ul li img{
+			width: 100%;height: 100%;
+		}
+		div{
+			width: 790px;
+			height: 200px;
+			border: 1px solid #000;
+			margin: 50px auto;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li><img src="http://c.hiphotos.baidu.com/zhidao/pic/item/023b5bb5c9ea15cecc198d15b0003af33a87b233.jpg" alt=""></li>
+			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
+			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
+			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
+			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
+			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
+			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
+			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
+			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
+			<li><img src="http://c.hiphotos.baidu.com/zhidao/pic/item/023b5bb5c9ea15cecc198d15b0003af33a87b233.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="p1" style="width: 200px;height: 200px;background: red;position: absolute;display: none;">1</div>
+	<script type="text/javascript">
+
+window.onload=function(){
+	var odiv=document.getElementById('p1')
+    document.onmousedown=function(ev){
+
+        var oEvent=ev||event;
+
+        odiv.style.left=oEvent.clientX+'px';  // 指定创建的DIV在文档中距离左侧的位置
+
+        odiv.style.top=oEvent.clientY+'px';  // 指定创建的DIV在文档中距离顶部的位置
+        odiv.style.display="block"
+    }
+
+}
+
+</script>
+</body>
+</html>
