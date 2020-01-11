@@ -2,24 +2,40 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>061-图片轮播图.html</title>
-	<style>
+	<title>Document</title>
+	<style type="text/css">
 		*{
 			margin: 0;
 			padding: 0;
+			margin: 20 auto;
 		}
 		ul{
-			width: 3950px;
-			height: 200px;
-			animation:change 10s linear 0s infinite normal;
+			width: 2800px;
+			height: 300px;
+			border: 1px solid #000;
+			overflow: hidden;
+			animation-name: do;
+			animation-timing-function:linear ;
+			animation-iteration-count: infinite;
+			animation-duration: 8s;
+
 		}
-		@keyframes change{
+
+		li{
+			list-style: none;
+			float: left;
+		}
+		img{
+			width: 350px;
+			height: 300px;
+		}
+		@keyframes do{
 			from{
 				margin-left: 0px;
 			}
 			to{
-				margin-left: -3160px;
-			}	
+				margin-left: -2450px;
+			}
 		}
 		ul:hover{
 			animation-play-state: paused;
@@ -30,38 +46,64 @@
 		ul li:hover{
 			opacity: 1;
 		}
-		ul li{
-			width: 395px;
-			height: 200px;
-			float: left;
-			list-style: none;
-		}
-		ul li img{
-			width: 100%;height: 100%;
-		}
 		div{
-			width: 790px;
-			height: 200px;
+			width: 350px;
+			height: 300px;
 			border: 1px solid #000;
-			margin: 50px auto;
 			overflow: hidden;
+			animation-name: yi;
+			animation-duration: 20s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+		@keyframes yi{
+			0%{
+				top: 0px;
+				left: 0px;
+			}
+			20%{
+				top: 200px;
+				left: 400px;
+			}
+			40%{
+				top: 400px;
+				left: 800px;
+			}
+			60%{
+				top: 400px;
+				left: 400px;
+			}
+			80%{
+				top: 400px;
+				left: 0px;
+			}
+			90%{
+				top:200px;
+				left: 0px;
+			}
+			100%{
+				top: 0px;
+				left: 0px;
+			}
 		}
 	</style>
 </head>
 <body>
-	<div>
-		<ul>
-			<li><img src="http://c.hiphotos.baidu.com/zhidao/pic/item/023b5bb5c9ea15cecc198d15b0003af33a87b233.jpg" alt=""></li>
-			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
-			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
-			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
-			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
-			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
-			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
-			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
-			<li><img src="http://img1.imgtn.bdimg.com/it/u=3990342075,2367006974&fm=200&gp=0.jpg" alt=""></li>
-			<li><img src="http://c.hiphotos.baidu.com/zhidao/pic/item/023b5bb5c9ea15cecc198d15b0003af33a87b233.jpg" alt=""></li>
-		</ul>
-	</div>
+<div>
+	<ul>
+		<li><img src="http://img3.imgtn.bdimg.com/it/u=346230831,1833217134&fm=200&gp=0.jpg"></li>
+		<li><img src="http://img5.imgtn.bdimg.com/it/u=2298824648,1812234339&fm=200&gp=0.jpg"></li>
+		<li><img src="http://img5.imgtn.bdimg.com/it/u=2298824648,1812234339&fm=200&gp=0.jpg"></li>
+		<li><img src="http://img5.imgtn.bdimg.com/it/u=2298824648,1812234339&fm=200&gp=0.jpg"></li>
+		<li><img src="http://img5.imgtn.bdimg.com/it/u=2298824648,1812234339&fm=200&gp=0.jpg"></li>
+		<li><img src="http://img5.imgtn.bdimg.com/it/u=2298824648,1812234339&fm=200&gp=0.jpg"></li>
+		<li><img src="http://img5.imgtn.bdimg.com/it/u=2298824648,1812234339&fm=200&gp=0.jpg"></li>
+		<li><img src="http://img3.imgtn.bdimg.com/it/u=346230831,1833217134&fm=200&gp=0.jpg"></li>
+	</ul>
+</div>
 </body>
 </html>

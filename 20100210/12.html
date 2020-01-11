@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../wps/jquery-3.2.0.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;margin: 0;
+			list-style: none;
+		}
+		.view{
+			width: 200px;
+			height: 120px;
+			border: 2px solid #000;
+			overflow: hidden;
+			position: relative;
+			margin: 50px auto;
+		}
+		ul{
+			position: absolute;
+			top: 0;
+			width: 1400px;
+			height: 120px;
+			display: flex;
+			flex-direction: row;
+			animation:doo 10s linear infinite; 
+		}
+		@keyframes do{
+			from{
+				left: 0;
+			}
+			to{
+				left: -1200px;
+			}
+		}
+		ul li{
+			width: 100%;height: 100%;
+		}
+		ul li img{
+			width: 100%;height: 100%
+		}
+		@keyframes doo{
+			from{
+				right: 0
+			}
+			to{
+				right: -1200px
+			}
+		}
+		ul li{
+			width: 100%;height: 100%;
+		}
+		ul li img{
+			width: 100%;height: 100%
+		}
+		button{
+			width: 30px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="view">
+		<ul class="dong">
+			<li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578740059757&di=94d5d1cbf2031765b79f08bf827e2395&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201808%2F08%2F20180808204327_xmbhb.thumb.700_0.jpg"></li>
+			<li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578740156804&di=9c9e3cb4cab5b3429c3814eccb1eb4df&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fc2cec3fdfc03924547eae8438794a4c27d1e251a.jpg"></li>
+			<li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578740156804&di=9c9e3cb4cab5b3429c3814eccb1eb4df&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fc2cec3fdfc03924547eae8438794a4c27d1e251a.jpg"></li>
+			<li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578740156804&di=9c9e3cb4cab5b3429c3814eccb1eb4df&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fc2cec3fdfc03924547eae8438794a4c27d1e251a.jpg"></li>
+			<li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578740156804&di=9c9e3cb4cab5b3429c3814eccb1eb4df&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fc2cec3fdfc03924547eae8438794a4c27d1e251a.jpg"></li>
+			<li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578740156804&di=9c9e3cb4cab5b3429c3814eccb1eb4df&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fc2cec3fdfc03924547eae8438794a4c27d1e251a.jpg"></li>
+			<li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578740059757&di=94d5d1cbf2031765b79f08bf827e2395&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201808%2F08%2F20180808204327_xmbhb.thumb.700_0.jpg"></li>
+		</ul>
+		
+	</div>
+	<button>left</button>
+		<button>right</button>
+</body>
+</html>
