@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+	<!-- 	
+	load只能get请求 
+	$.get 有三种传参方法
+	原生ajax请求步骤，总结
+	-->
+	<div class="all"></div>
+	<div class="all1"></div>
+	<button class="btn">点</button>
+	<button class="btn1">点1</button>
+	<script type="text/javascript">
+		// load
+		$('.btn').click(function() {
+			$('.all').load('json.php',{url:'tian'})
+		});
+		$('.btn1').click(function() {
+			$('.all1').load('word.html')
+	})
+	</script>
+</body>
+</html>

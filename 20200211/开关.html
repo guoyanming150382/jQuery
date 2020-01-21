@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../wps/jquery-3.2.0.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0;padding: 0;
+		}
+		.content{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			overflow: hidden;
+			position: relative;
+		}
+		.content li{
+			width: 300px;
+			height: 300px;
+		}
+		.content li:nth-child(1){
+			background: red;
+		}
+		.content li:nth-child(2){
+			background: deeppink;
+		}
+		.content li:nth-child(3){
+			background: skyblue;
+		}
+
+		.tilte{
+			position: absolute;
+			top: 40%;
+			right: 20px;
+			width: 30px;
+			height: 60px;
+			list-style: none;
+			border: 1px solid #000;
+			z-index: 999;
+		}
+		.tilte li{
+			width: 30px;
+			height: 20px;
+		}
+		.tilte li:nth-child(1){
+			background: red;
+		}
+		.tilte li:nth-child(2){
+			background: deeppink;
+		}
+		.tilte li:nth-child(3){
+			background: skyblue;;
+		}
+		.dd{
+			width: 300px;
+			height: 900px;
+			transition:all 0.5s linear;
+		}
+		.on{
+			color: white;
+		}
+
+
+	</style>
+</head>
+<body>
+	<!-- 
+		toggle(可以加时间,函数)
+		fadeToggle(透明度) fadein dadeQut
+		 -->
+	<div class="offon">show hide</div>
+	<button id="btn">开/关</button>
+	<ul class="content">
+		<ul class="tilte">
+			<li class="on">1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<div class="dd">	
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</div>
+	</ul>
+	<script type="text/javascript">
+		$('.tilte li').click(function() {
+			console.log('asdaz')
+			$(this).addClass('on').siblings().removeClass('on')
+			var index=$(this).index()
+			$('.content .dd').css({'transform':'translateY('+(index*-300)+'px)'})
+		});
+
+		// 开关
+			var num=0
+		
+		$('#btn').click(function() {
+			console.log(num)
+			if(num%2==0){
+				$('.offon').hide()
+			}else{
+				$('.offon').show()
+			}
+			num++
+		});
+	</script>
+</body>
+</html>
