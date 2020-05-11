@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap 实例 - 响应式表格</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.weizhi{
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="table-responsive">
+					<table class="table">
+						<caption>
+							<h1>响应式表格布局</h1>
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title">增加数据</h3>
+								</div>
+								<div class="panel-body">
+									<div class="btn-group btn-group-lg">
+										<button type="button" class="btn btn-default btn-primary" data-toggle="modal" data-target="#myModal">添加</button>
+									</div>
+								</div>
+							</div> 
+						</caption>
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>产品</th>
+								<th>头像</th>
+								<th>付款日期</th>
+								<th>数量</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="all">
+							<!-- <tr>
+								<td>产品1</td>
+								<td>作者</td>
+								<td>23/11/2013</td>
+								<td>693</td>
+								<td>
+									<div class="btn-group btn-group-xs">
+										<button type="button" class="btn btn-default btn-success" id="cha">查询</button>
+										<button type="button" class="btn btn-default btn-primary">修改</button>
+										<button type="button" class="btn btn-default btn-danger">删除</button>
+									</div>
+								</td>
+							</tr> -->
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						添加数据
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div style="width: 300px;margin: 20px auto">
+						产品:<input type="text" id="produce" placeholder="请填写" class="weizhi"><br>
+						头像:<input type="text" id="headP" placeholder="请填写" class="weizhi"><br>
+						付款日期:<input type="text" id="moneyDate" placeholder="请填写" class="weizhi"><br>
+						数量:<input type="text" id="number" placeholder="请填写" class="weizhi">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="button" class="btn btn-primary" id="sunbut" data-dismiss="modal">
+						提交
+					</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+	<!-- 查询模态框 -->
+	<div class="modal fade" id="myModalCha" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						查询结果
+					</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+						<span>ID编号：</span>
+						<span class="chaId">ID编号</span>
+					</p>
+					<p>
+						<span>产品名：</span>
+						<span class="chaPro">ID编号</span>
+					</p>
+					<p>
+						<span>头像：</span>
+						<span class="chaHea">ID编号</span>
+					</p>
+					<p>
+						<span>付款日期：</span>
+						<span class="chaDate">ID编号</span>
+					</p>
+					<p>
+						<span>数量：</span>
+						<span class="chaMon">ID编号</span>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div>
+	</div>
+	<!-- 修改模态框 -->
+	<div class="modal fade" id="myModalXiu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel">修改</h4>
+	            </div>
+	            <div class="modal-body">
+	            	<div style="width: 300px;margin: 20px auto">
+						产品:<input type="text" id="Xproduce" placeholder="请填写" class="weizhi"><br>
+						头像:<input type="text" id="XheadP" placeholder="请填写" class="weizhi"><br>
+						付款日期:<input type="text" id="XmoneyDate" placeholder="请填写" class="weizhi"><br>
+						数量:<input type="text" id="Xnumber" placeholder="请填写" class="weizhi">
+					</div>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	                <button type="button" class="btn btn-primary xiuZheng" data-dismiss="modal">提交修改</button>
+	            </div>
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+		<script type="text/javascript">
+		//渲染页面
+		getdata()
+		function getdata(){
+			$.ajax({
+				async: false,
+				url:'http://127.0.0.1:8001/cha',
+				type:'get',
+				dataType:'json',
+				success:function(res){
+					console.log("all",res)
+					var str=""
+					for(var i=0;i<res.data.length;i++){
+						str+='<tr><td>'+res.data[i].id+'</td><td>'+res.data[i].produce+'</td><td>'+res.data[i].headP+'</td><td>'+res.data[i].moneyDate+'</td><td>'+res.data[i].number+'</td><td><div class="btn-group btn-group-xs"><button type="button" class="btn btn-default btn-success chaID" data-id="'+res.data[i].id+'" data-toggle="modal" data-target="#myModalCha">查询</button><button type="button" class="btn btn-default btn-primary xiuGai" data-toggle="modal" data-target="#myModalXiu" data-id="'+res.data[i].id+'">修改</button><button type="button" class="btn btn-default btn-danger IDshan" data-id="'+res.data[i].id+'">删除</button></div></td></tr>'
+					}
+					$('#all').html(str)
+				}
+			})
+		}
+		// 插入功能
+		$("#sunbut").on('click',function() {
+			var dataArr={
+				produce:$("#produce").val(),
+				headP:$("#headP").val(),
+				moneyDate:$("#moneyDate").val(),
+				number:$("#number").val()
+			}
+			$.ajax({
+				url:'http://127.0.0.1:8001/zeng',
+				type:"post",
+				data:dataArr,
+				success:function(res){
+					console.log(res)
+				}
+			})
+		});
+		// 查询
+		$('.chaID').on('click',function() {
+			let id=this.getAttribute("data-id")
+			console.log("id",id)
+			$.ajax({
+				url:'http://127.0.0.1:8001/IDcha',
+				type:'post',
+				data:{id},
+
+				success:function(res){
+					console.log(res)
+					$(".chaId").html(res.data[0].id)
+					$(".chaPro").html(res.data[0].produce)
+					$(".chaHea").html(res.data[0].headP)
+					$(".chaDate").html(res.data[0].moneyDate)
+					$(".chaMon").html(res.data[0].number)
+				}
+			})
+		});
+		// 删除
+		$('.IDshan').on('click', function() {
+			let id=this.getAttribute("data-id")
+			console.log("id",id)
+			$.ajax({
+				url:'http://127.0.0.1:8001/IDdell',
+				type:'post',
+				data:{id},
+				success:function(res){
+					console.log(res)
+				}
+			})
+		});	
+		// 修改
+		$('.xiuGai').on('click',function() {
+			let id=this.getAttribute("data-id")
+			console.log("id",id)
+			$.ajax({
+				url:'http://127.0.0.1:8001/IDcha',
+				type:'post',
+				data:{id},
+
+				success:function(res){
+					console.log(res)
+					var Id=res.data[0].id
+					$("#Xproduce").val(res.data[0].produce)
+					$("#XheadP").val(res.data[0].headP)
+					$("#XmoneyDate").val(res.data[0].moneyDate)
+					$("#Xnumber").val(res.data[0].number)
+					$('.xiuZheng').attr("data-id",res.data[0].id)
+				}
+			})
+		});
+		// 修改
+					$('.xiuZheng').on('click', function() {
+						let id=this.getAttribute("data-id")
+						var dataArr={
+							produce:$("#Xproduce").val(),
+							headP:$("#XheadP").val(),
+							moneyDate:$("#XmoneyDate").val(),
+							number:$("#Xnumber").val(),
+							id:id
+						}
+						console.log("dataArr",dataArr)
+						$.ajax({
+							url:"http://127.0.0.1:8001/update",
+							data:dataArr,
+							type:"post",
+							success:function(res){
+								console.log(res)
+							}
+						})
+					});
+	</script>
+</body>
+</html>
